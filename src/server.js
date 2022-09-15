@@ -94,6 +94,7 @@ http.createServer((req, res) => {
                 "message": "Oka market muaffaqiyatli qoshildi"
             }))
         }
+        // post Market
         if (req.url == "/pushBranch") {
             req.on("data", chunk => {
                 const { title, marketId } = JSON.parse(chunk)
@@ -111,6 +112,7 @@ http.createServer((req, res) => {
                 "message": "Oka branch muaffaqiyatli qoshildi"
             }))
         }
+        // post Branch
         if (req.url == "/pushProduct") {
             req.on("data", chunk => {
                 const { title, branchId, narx  } = JSON.parse(chunk)
@@ -127,6 +129,7 @@ http.createServer((req, res) => {
                 "message": "Oka Produksiya muaffaqiyatli qoshildi"
             }))
         }
+        // post Product
         if (req.url == "/pushWorkers") {
             req.on("data", chunk => {
                 const { name, maosh, staj, branchId } = JSON.parse(chunk)
@@ -143,10 +146,87 @@ http.createServer((req, res) => {
                 "message": "Oka Ishchilar muaffaqiyatli qoshildi"
             }))
         }
+        // post Workers
+        return
+    }
 
+    if (req.method == "PUT") {
+        if (req.url.split("/")[1] == "putMarket") {
+            req.on("data", chunk => {
+                const { title } = JSON.parse(chunk)
+                const newObj = {
+                    id: Number(urlId),
+                    title
+                }
+                const uploadMarket = Market.map(e => e.id == urlId ? newObj : e)
+                white("market.json", uploadMarket)
+            })
+            res.writeHead(201, option)
+            res.end(JSON.stringify({
+                "status": "201",
+                "message": "Oka market muaffaqiyatli ozgardi"
+            })) 
+        }
+        // put Market
 
+        if (req.url.split("/")[1] == "putBranch") {
+            req.on("data", chunk => {
+                const { title, marketId } = JSON.parse(chunk)
+                const newObj = {
+                    id: Number(urlId),
+                    title,
+                    marketId 
+                }
+                const uploadBranch = Branch.map(e => e.id == urlId ? newObj : e)
+                white("branch.json", uploadBranch)
+            })
+            res.writeHead(201, option)
+            res.end(JSON.stringify({
+                "status": "201",
+                "message": "Oka Branch muaffaqiyatli ozgardi"
+            }))
+        }   
+        //  put Branch
+        if (req.url.split("/")[1] == "putProduct") {
+            req.on("data", chunk => {
+                const { title,narx, branchId } = JSON.parse(chunk)
+                const newObj = {
+                    id: Number(urlId),
+                    title,
+                    narx,
+                    branchId 
+                }
+                const uploadProduct = Product.map(e => e.id == urlId ? newObj : e)
+                white("product.json", uploadProduct)
+            })
+            res.writeHead(201, option)
+            res.end(JSON.stringify({
+                "status": "201",
+                "message": "Oka Produksiya muaffaqiyatli ozgardi"
+            })) 
+        }
+        // put Product
 
-
+        if (req.url.split("/")[1] == "putIshchi") {
+            req.on("data", chunk => {
+                const { name, maosh, staj, branchId } = JSON.parse(chunk)
+                const newObj = {
+                    id: Number(urlId),
+                    name,
+                    maosh,
+                    staj,
+                    branchId 
+                }
+                const uploadIshchi = Workers.map(e => e.id == urlId ? newObj : e)
+                white("workers.json", uploadIshchi)
+            })
+            res.writeHead(201, option)
+            res.end(JSON.stringify({
+                "status": "201",
+                "message": "Oka Ishchilar muaffaqiyatli ozgardi"
+            })) 
+        }
+        // put Product
 
         return
     }
@@ -166,3 +246,8 @@ http.createServer((req, res) => {
 //get /branch/1
 //get /product/1
 //get /workers/1
+
+// POST /module
+// POST /branch
+// POST /product
+// POST /workers

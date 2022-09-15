@@ -2,8 +2,7 @@
     {
         "id": 1,
         "title": "Kola",
-        "narx": 10,
-        "branchId": 1
+        "branchId": 2
     },
     {
         "id": 2,

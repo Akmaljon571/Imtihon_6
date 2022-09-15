@@ -1,10 +1,10 @@
 [
     {
         "id": 1,
-        "name": "Eshmat",
-        "maosh": 2000000,
-        "staj": 5,
-        "branchId": 1
+        "name": "Eshmatovich",
+        "maosh": "10000",
+        "staj": "5",
+        "branchId": 2
     },
     {
         "id": 2,
