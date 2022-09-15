@@ -77,6 +77,80 @@ http.createServer((req, res) => {
         return
     }
 
+    if (req.method == "POST") {
+        if (req.url == "/pushMarket") {
+            req.on("data", chunk => {
+                const { title } = JSON.parse(chunk)
+                const newObj = {
+                    id: Market.at(-1).id + 1 || 1,
+                    title
+                }
+                Market.push(newObj)
+                white("market.json", Market)
+            })
+            res.writeHead(201, option)
+            res.end(JSON.stringify({
+                "status": "201",
+                "message": "Oka market muaffaqiyatli qoshildi"
+            }))
+        }
+        if (req.url == "/pushBranch") {
+            req.on("data", chunk => {
+                const { title, marketId } = JSON.parse(chunk)
+                const newObj = {
+                    id: Branch.at(-1).id + 1 || 1,
+                    title,marketId
+
+                }
+                Branch.push(newObj)
+                white("branch.json", Branch)
+            })
+            res.writeHead(201, option)
+            res.end(JSON.stringify({
+                "status": "201",
+                "message": "Oka branch muaffaqiyatli qoshildi"
+            }))
+        }
+        if (req.url == "/pushProduct") {
+            req.on("data", chunk => {
+                const { title, branchId, narx  } = JSON.parse(chunk)
+                const newObj = {
+                    id: Product.at(-1).id + 1 || 1,
+                    title,narx,branchId
+                }
+                Product.push(newObj)
+                white("product.json", Product)
+            })
+            res.writeHead(201, option)
+            res.end(JSON.stringify({
+                "status": "201",
+                "message": "Oka Produksiya muaffaqiyatli qoshildi"
+            }))
+        }
+        if (req.url == "/pushWorkers") {
+            req.on("data", chunk => {
+                const { name, maosh, staj, branchId } = JSON.parse(chunk)
+                const newObj = {
+                    id: Workers.at(-1).id + 1 || 1,
+                    name,maosh,staj, branchId
+                }
+                Workers.push(newObj)
+                white("workers.json", Workers)
+            })
+            res.writeHead(201, option)
+            res.end(JSON.stringify({
+                "status": "201",
+                "message": "Oka Ishchilar muaffaqiyatli qoshildi"
+            }))
+        }
+
+
+
+
+
+        return
+    }
+
 
     
     res.on("Ok")

@@ -1,32 +1,44 @@
 [
     {
         "id": 1,
-        "title": "Kola", 
+        "title": "Kola",
         "narx": 10,
         "branchId": 1
     },
     {
         "id": 2,
-        "title": "pepsi", 
+        "title": "pepsi",
         "narx": 10,
         "branchId": 2
     },
     {
         "id": 3,
-        "title": "fanta", 
+        "title": "fanta",
         "narx": 10,
         "branchId": 3
     },
     {
         "id": 4,
-        "title": "apelsin", 
+        "title": "apelsin",
         "narx": 10,
         "branchId": 3
     },
     {
         "id": 5,
-        "title": "Pishloq", 
+        "title": "Pishloq",
         "narx": 100,
         "branchId": 4
+    },
+    {
+        "id": 7,
+        "title": "mineralka",
+        "narx": "10000",
+        "branchId": 4
+    },
+    {
+        "id": 7,
+        "title": "shkalat",
+        "narx": "10000",
+        "branchId": 2
     }
 ]

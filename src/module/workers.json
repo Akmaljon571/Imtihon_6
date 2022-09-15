@@ -26,5 +26,33 @@
         "maosh": 2000000,
         "staj": 5,
         "branchId": 4
+    },
+    {
+        "id": 5,
+        "name": "Mirshakar",
+        "maosh": "10000",
+        "staj": "5",
+        "branchId": 2
+    },
+    {
+        "id": 6,
+        "name": "Jasur",
+        "maosh": "10000",
+        "staj": "5",
+        "branchId": 4
+    },
+    {
+        "id": 7,
+        "name": "Islom",
+        "maosh": "10000",
+        "staj": "5",
+        "branchId": 4
+    },
+    {
+        "id": 8,
+        "name": "Islom",
+        "maosh": "10000",
+        "staj": "5",
+        "branchId": 4
     }
 ]

@@ -18,5 +18,15 @@
         "id": 4,
         "title": "Makro Xadra",
         "marketId": 2
+    },
+    {
+        "id": 5,
+        "title": "Havas olmazor",
+        "marketId": 4
+    },
+    {
+        "id": 6,
+        "title": "Havas Xiva",
+        "marketId": 4
     }
 ]
