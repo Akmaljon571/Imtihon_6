@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "Eshmat",
+        "maosh": 2000000,
+        "staj": 5,
+        "branchId": 1
+    },
+    {
+        "id": 2,
+        "name": "Toshmat",
+        "maosh": 2000000,
+        "staj": 5,
+        "branchId": 2
+    },
+    {
+        "id": 3,
+        "name": "Akrom",
+        "maosh": 2000000,
+        "staj": 5,
+        "branchId": 3
+    },
+    {
+        "id": 4,
+        "name": "bekmurod",
+        "maosh": 2000000,
+        "staj": 5,
+        "branchId": 4
+    }
+]

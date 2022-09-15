@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Kola", 
+        "narx": 10,
+        "branchId": 1
+    },
+    {
+        "id": 2,
+        "title": "pepsi", 
+        "narx": 10,
+        "branchId": 2
+    },
+    {
+        "id": 3,
+        "title": "fanta", 
+        "narx": 10,
+        "branchId": 3
+    },
+    {
+        "id": 4,
+        "title": "apelsin", 
+        "narx": 10,
+        "branchId": 3
+    },
+    {
+        "id": 5,
+        "title": "Pishloq", 
+        "narx": 100,
+        "branchId": 4
+    }
+]

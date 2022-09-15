@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "Karzinka Olmazor",
+        "marketId": 1
+    },
+    {
+        "id": 2,
+        "title": "Makro Olmazor",
+        "marketId": 2
+    },
+    {
+        "id": 3,
+        "title": "Karzinka Xiva",
+        "marketId": 1
+    },
+    {
+        "id": 4,
+        "title": "Makro Xadra",
+        "marketId": 2
+    }
+]
