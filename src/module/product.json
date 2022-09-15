@@ -2,13 +2,7 @@
     {
         "id": 1,
         "title": "Kola",
-        "branchId": 2
-    },
-    {
-        "id": 2,
-        "title": "pepsi",
-        "narx": 10,
-        "branchId": 2
+        "branchId": 1
     },
     {
         "id": 3,
@@ -27,17 +21,5 @@
         "title": "Pishloq",
         "narx": 100,
         "branchId": 4
-    },
-    {
-        "id": 7,
-        "title": "mineralka",
-        "narx": "10000",
-        "branchId": 4
-    },
-    {
-        "id": 7,
-        "title": "shkalat",
-        "narx": "10000",
-        "branchId": 2
     }
 ]

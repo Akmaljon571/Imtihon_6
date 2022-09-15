@@ -6,5 +6,6 @@ export const root = dir => {
 }
 
 export const white = (dir, data) => {
-    return JSON.parse(fs.writeFileSync(path.join(process.cwd(), "src", "module", dir), JSON.stringify(data, null, 4)))
+    fs.writeFileSync(path.join(process.cwd(), "src", "module", dir), JSON.stringify(data, null, 4))
+    return "ok"
 }

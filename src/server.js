@@ -82,7 +82,7 @@ http.createServer((req, res) => {
             req.on("data", chunk => {
                 const { title } = JSON.parse(chunk)
                 const newObj = {
-                    id: Market.at(-1).id + 1 || 1,
+                    id: Market.at(-1)?.id + 1 || 1,
                     title
                 }
                 Market.push(newObj)
@@ -99,7 +99,7 @@ http.createServer((req, res) => {
             req.on("data", chunk => {
                 const { title, marketId } = JSON.parse(chunk)
                 const newObj = {
-                    id: Branch.at(-1).id + 1 || 1,
+                    id: Branch.at(-1)?.id + 1 || 1,
                     title,marketId
 
                 }
@@ -117,7 +117,7 @@ http.createServer((req, res) => {
             req.on("data", chunk => {
                 const { title, branchId, narx  } = JSON.parse(chunk)
                 const newObj = {
-                    id: Product.at(-1).id + 1 || 1,
+                    id: Product.at(-1)?.id + 1 || 1,
                     title,narx,branchId
                 }
                 Product.push(newObj)
@@ -134,7 +134,7 @@ http.createServer((req, res) => {
             req.on("data", chunk => {
                 const { name, maosh, staj, branchId } = JSON.parse(chunk)
                 const newObj = {
-                    id: Workers.at(-1).id + 1 || 1,
+                    id: Workers.at(-1)?.id + 1 || 1,
                     name,maosh,staj, branchId
                 }
                 Workers.push(newObj)
@@ -231,6 +231,60 @@ http.createServer((req, res) => {
         return
     }
 
+    if (req.method == "DELETE") {
+        if (req.url.split("/")[1] == "delMarket") {
+           const delMarket = Market.filter(e => e.id != urlId);
+           white("market.json", delMarket)
+           const delBranch = Branch.filter(e => e.marketId != urlId )
+           white("branch.json", delBranch)
+           const delProduct = Product.filter(e => e.branchId != urlId )
+           white("product.json", delProduct)
+           const delWorkers = Workers.filter(e => e.branchId != urlId )
+           white("workers.json", delWorkers)
+
+           res.writeHead(201, option)
+           res.end(JSON.stringify({
+               "status": "201",
+               "message": "Oka market muaffaqiyatli ochirildi"
+           }))
+        }
+        // delete Market
+        if (req.url.split("/")[1] == "delBranch") {
+           const delBranch = Branch.filter(e => e.id != urlId )
+           white("branch.json", delBranch)
+           const delProduct = Product.filter(e => e.branchId != urlId )
+           white("product.json", delProduct)
+           const delWorkers = Workers.filter(e => e.branchId != urlId )
+           white("workers.json", delWorkers)
+           res.writeHead(201, option)
+           res.end(JSON.stringify({
+               "status": "201",
+               "message": "Oka Branch muaffaqiyatli ochirildi"
+           }))
+        }
+        // delete Branch
+        if (req.url.split("/")[1] == "delProduct") {
+           const delProduct = Product.filter(e => e.id != urlId);
+           white("product.json", delProduct)
+           res.writeHead(201, option)
+           res.end(JSON.stringify({
+               "status": "201",
+               "message": "Oka Produc muaffaqiyatli ochirildi"
+           }))
+        }
+        // delete Product
+        if (req.url.split("/")[1] == "deleleIshchi") {
+           const delIshchi = Workers.filter(e => e.id != urlId);
+           white("workers.json", delIshchi)
+           res.writeHead(201, option)
+           res.end(JSON.stringify({
+               "status": "201",
+               "message": "Oka Ishchilar muaffaqiyatli ochirildi"
+           }))
+        }
+        // delete Ishchilar
+        return
+    }
 
     
     res.on("Ok")
@@ -240,9 +294,7 @@ http.createServer((req, res) => {
 
 
 
-
-// get /module
-//get /module/1
+//get /maket/1 
 //get /branch/1
 //get /product/1
 //get /workers/1
@@ -251,3 +303,8 @@ http.createServer((req, res) => {
 // POST /branch
 // POST /product
 // POST /workers
+
+// PUT /module
+// PUT /branch
+// PUT /product
+// PUT /workers
