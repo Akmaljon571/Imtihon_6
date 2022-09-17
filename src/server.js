@@ -6,6 +6,13 @@ const option = {
     "Access-Control-Allow-Origin": "*"
 }
 
+const func = (status, data) => {
+    return JSON.stringify({
+        "status": status,
+        "data": data
+    })
+}
+
 http.createServer((req, res) => {
     const urlId = req.url.split("/")[2]
     const eskiMarket = JSON.stringify(root("market.json"))
@@ -20,7 +27,7 @@ http.createServer((req, res) => {
     if (req.method == "GET") {
         if (req.url == "/markets") {
             res.writeHead(200, option)
-            return res.end(JSON.stringify(root("market.json")))
+            return res.end(func(200, root("market.json")))
         }
 
         if (req.url.split("/")[1] == "market") {
@@ -34,7 +41,7 @@ http.createServer((req, res) => {
             asosiy.mahsulotlar = productsiya;
 
             res.writeHead(200, option)
-            return res.end(JSON.stringify(asosiy))         
+            return res.end(func(200, asosiy))         
         }
         // Market
 
@@ -47,7 +54,7 @@ http.createServer((req, res) => {
 
 
             res.writeHead(200, option)
-            return res.end(JSON.stringify(asosiy))         
+            return res.end(func(200, asosiy))         
         }
         // branch
 
@@ -60,7 +67,7 @@ http.createServer((req, res) => {
             let asosiy = productBrand.filter(e => e.id == urlId ? e.makro = Market.find(b => e.brand.marketId == b.id ) : null)
             asosiy = asosiy.filter(e => e.id == urlId ? e.ishchilar = Workers.find(b => e.branchId == b.branchId ) : null)
             res.writeHead(200, option)
-            return res.end(JSON.stringify(asosiy))         
+            return res.end(func(200, asosiy))         
         }
         //product
         
@@ -71,7 +78,7 @@ http.createServer((req, res) => {
             let asosiy = productBrand.filter(e => e.id == urlId ? e.makro = Market.find(b => e.brand.marketId == b.id ) : null)
             asosiy = asosiy.filter(e => e.id == urlId ? e.product = Product.filter(b => e.branchId == b.branchId ) : null)
             res.writeHead(200, option)
-            return res.end(JSON.stringify(asosiy))          
+            return res.end(func(200, asosiy))          
         }
         // workers
 
