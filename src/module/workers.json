@@ -1,37 +1,65 @@
 [
     {
         "id": 1,
-        "name": "Eshmatovich",
-        "maosh": "10000",
-        "staj": "5",
+        "name": "Eshmat",
+        "maosh": 3000,
+        "staj": 5,
         "branchId": 1
     },
     {
+        "id": 2,
+        "name": "Toshmat",
+        "maosh": 3000,
+        "staj": 5,
+        "branchId": 2
+    },
+    {
         "id": 3,
-        "name": "Akrom",
-        "maosh": 2000000,
+        "name": "NUrmat",
+        "maosh": 3000,
         "staj": 5,
         "branchId": 3
     },
     {
         "id": 4,
-        "name": "bekmurod",
-        "maosh": 2000000,
+        "name": "Oktam",
+        "maosh": 3000,
         "staj": 5,
         "branchId": 4
     },
     {
+        "id": 5,
+        "name": "Abbos",
+        "maosh": 3000,
+        "staj": 5,
+        "branchId": 5
+    },
+    {
         "id": 6,
-        "name": "Jasur",
-        "maosh": "10000",
-        "staj": "5",
-        "branchId": 4
+        "name": "Ali",
+        "maosh": 3000,
+        "staj": 5,
+        "branchId": 6
+    },
+    {
+        "id": 7,
+        "name": "Asilbek",
+        "maosh": 6000000,
+        "staj": 10,
+        "branchId": 2
     },
     {
         "id": 8,
-        "name": "Islom",
-        "maosh": "10000",
-        "staj": "5",
+        "name": "Rustam",
+        "maosh": 3000,
+        "staj": 5,
         "branchId": 4
+    },
+    {
+        "id": 9,
+        "name": "Ravshan",
+        "maosh": 3000,
+        "staj": 5,
+        "branchId": 1
     }
 ]

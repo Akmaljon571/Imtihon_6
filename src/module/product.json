@@ -2,24 +2,55 @@
     {
         "id": 1,
         "title": "Kola",
+        "narx": 3000,
         "branchId": 1
     },
     {
+        "id": 2,
+        "title": "Kola",
+        "narx": 3000,
+        "branchId": 2
+    },
+    {
         "id": 3,
-        "title": "fanta",
-        "narx": 10,
-        "branchId": 3
+        "title": "Salat",
+        "narx": 5000,
+        "branchId": 6
     },
     {
         "id": 4,
-        "title": "apelsin",
-        "narx": 10,
-        "branchId": 3
+        "title": "Fanta",
+        "narx": 3000,
+        "branchId": 5
     },
     {
         "id": 5,
-        "title": "Pishloq",
-        "narx": 100,
+        "title": "Fanta",
+        "narx": 5000,
+        "branchId": 6
+    },
+    {
+        "id": 6,
+        "title": "Fanta",
+        "narx": 3000,
+        "branchId": 1
+    },
+    {
+        "id": 7,
+        "title": "Pepsi",
+        "narx": 3000,
         "branchId": 4
+    },
+    {
+        "id": 8,
+        "title": "Pepsi",
+        "narx": 3000,
+        "branchId": 6
+    },
+    {
+        "id": 9,
+        "title": "Pepsi",
+        "narx": 3000,
+        "branchId": 3
     }
 ]

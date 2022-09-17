@@ -1,27 +1,32 @@
 [
     {
         "id": 1,
-        "title": "Karzinka",
+        "title": "Karzinka Olmazor",
         "marketId": 1
     },
     {
         "id": 2,
-        "title": "Makro Olmazor",
+        "title": "Karzinka Xadra",
+        "marketId": 1
+    },
+    {
+        "id": 3,
+        "title": "Makro Xadra",
+        "marketId": 2
+    },
+    {
+        "id": 4,
+        "title": "Makro olmazor",
         "marketId": 2
     },
     {
         "id": 5,
-        "title": "Havas olmazor",
-        "marketId": 4
+        "title": "Xavas olmazor",
+        "marketId": 3
     },
     {
         "id": 6,
-        "title": "Havas Xiva",
-        "marketId": 4
-    },
-    {
-        "id": 7,
-        "title": "Havas Xiva",
-        "marketId": 1
+        "title": "Xavas Yangiyol",
+        "marketId": 3
     }
 ]

@@ -2,7 +2,8 @@ import http from "http"
 import { root, white } from "./utils/FS.js"
 
 const option = {
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*"
 }
 
 http.createServer((req, res) => {
@@ -237,7 +238,10 @@ http.createServer((req, res) => {
            white("market.json", delMarket)
            const delBranch = Branch.filter(e => e.marketId != urlId )
            white("branch.json", delBranch)
-           const delProduct = Product.filter(e => e.branchId != urlId )
+           const delProduct = Product.
+           
+           
+           filter(e => e.branchId != urlId )
            white("product.json", delProduct)
            const delWorkers = Workers.filter(e => e.branchId != urlId )
            white("workers.json", delWorkers)
@@ -273,7 +277,7 @@ http.createServer((req, res) => {
            }))
         }
         // delete Product
-        if (req.url.split("/")[1] == "deleleIshchi") {
+        if (req.url.split("/")[1] == "deleteIshchi") {
            const delIshchi = Workers.filter(e => e.id != urlId);
            white("workers.json", delIshchi)
            res.writeHead(201, option)
