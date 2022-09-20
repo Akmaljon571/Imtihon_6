@@ -32,13 +32,14 @@ http.createServer((req, res) => {
 
         if (req.url.split("/")[1] == "market") {
             const branch = Branch.filter(b => b.marketId == urlId )
-            const productsiya = Product.filter(p => p.branchId == urlId)
-            const workers = Workers.filter(w => w.branchId == urlId)
+            branch.map(e => e.mahsulotlari = Product.filter(p => p.branchId == e.id))
+            branch.map(e => e.ishchilar = Workers.filter(p => p.branchId == e.id))
+
+
 
             let asosiy = Market.find(e => e.id == urlId ? e : null)
             asosiy.branchlari = branch;
-            asosiy.ishchilari = workers;
-            asosiy.mahsulotlar = productsiya;
+            
 
             res.writeHead(200, option)
             return res.end(func(200, asosiy))         
@@ -109,7 +110,7 @@ http.createServer((req, res) => {
                 const newObj = {
                     id: Branch.at(-1)?.id + 1 || 1,
                     title,marketId
-
+                    
                 }
                 Branch.push(newObj)
                 white("branch.json", Branch)
